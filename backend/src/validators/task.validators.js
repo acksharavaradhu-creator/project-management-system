@@ -31,7 +31,8 @@ const createTaskSchema = z.object({
   projectId: z
     .number({ message: 'Project id is required and must be a number' })
     .int('Project id must be a whole number')
-    .positive('Project id must be positive'),
+    .positive('Project id must be positive')
+    .max(2147483647, 'Project id is too large'),
   ...fields,
 });
 

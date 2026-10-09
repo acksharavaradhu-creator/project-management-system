@@ -4,7 +4,7 @@ const { taskStatus, priority: priorityEnum } = require('../validators/task.valid
 // Turns "12" into 12. Returns null if it is not a positive whole number.
 const parseId = (value) => {
   const id = Number(value);
-  return Number.isInteger(id) && id > 0 ? id : null;
+  return Number.isInteger(id) && id > 0 && id <= 2147483647 ? id : null;
 };
 
 // Turns "2026-10-08" into a Date. Empty or missing becomes null.
